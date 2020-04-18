@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import logo from "./logo.svg";
+import "./App.css";
+import ComponentC from "./components/ComponentC";
+
+export const UserContex = React.createContext();
+export const ChannelContex = React.createContext();
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserContex.Provider value={"Darshana"}>
+        <ChannelContex.Provider value={"Senevirathna"}>
+          <ComponentC />
+        </ChannelContex.Provider>
+      </UserContex.Provider>
     </div>
   );
 }
